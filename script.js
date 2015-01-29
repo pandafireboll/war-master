@@ -100,7 +100,14 @@ $(document).ready(function() {
 			$("#my-card").html(convert_value_to_string(card_2.number)+" "+card_2.suit);
 			$("#my-card-count").html(cards_player_2.length);
 
-		}
+		} else {
+            if (cards_player_1.length) {
+                alert('opponent wins');
+            } else {
+                alert('you win');
+                location.reload();
+            }
+        }
     };
 	// console.log player decks
 	var check = function () {
@@ -171,30 +178,6 @@ $(document).ready(function() {
         }
 
             // when tie, check 4th card from the top of the deck of each player see who is largest
-
-            //
-            //} else if(cards_player_1[3]==cards_player_2[3]) {
-            //    war(cards_player_1[3],cards_player_2[3]);
-            //
-            //
-            //    if(cards_player_1[3]>cards_player_2[3]){
-            //        cards_player_1.push(cards_player_1[0],cards_player_1[1],cards_player_1[2],cards_player_1[3],cards_player_2[0],cards_player_2[1], cards_player_2[2],cards_player_2[3]);
-            //        cards_player_1.splice(0,4);
-            //        cards_player_2.splice(0,4);
-            //        console.log("player 1 wins the double war");
-            //
-            //        check();
-            //
-            //    }
-            //    else if(cards_player_2[3]>cards_player_1[3]) {
-            //        cards_player_1.push(cards_player_1[0], cards_player_1[1], cards_player_1[2], cards_player_1[3], cards_player_2[0], cards_player_2[1], cards_player_2[2], cards_player_2[3]);
-            //        cards_player_1.splice(0, 4);
-            //        cards_player_2.splice(0, 4);
-            //        console.log("player 2 wins the double war");
-            //        check();
-            //
-            //    }
-            //}
             // winner takes all 8 cards
         determine();
         advance();
